@@ -2,7 +2,8 @@ import React from 'react'
 import { Navigate, Route, Routes } from 'react-router-dom'
 import MainLayout from './layouts/MainLayout'
 import DashboardPage from './pages/DashboardPage'
-import DirectoryPage from './pages/DirectoryPage'
+import DirectoryPage from './pages/directory/DirectoryPage'
+import ViewProfile from './pages/directory/ViewProfile'
 import TrainingPage from './pages/TrainingPage'
 import AchievementsPage from './pages/AchievementsPage'
 import EventsPage from './pages/EventsPage'
@@ -24,6 +25,7 @@ export default function App() {
       <Routes>
         <Route path="/dashboard" element={<DashboardPage />} />
         <Route path="/directory" element={<DirectoryPage />} />
+        <Route path="/directory/view-profile" element={<ViewProfile />} />
         <Route path="/career" element={<CareerPage />} />
         <Route path="/training" element={<TrainingPage />} />
         <Route path="/achievements" element={<AchievementsPage />} />

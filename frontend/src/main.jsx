@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
+import { ChatProvider } from './context/ChatContext'
 import App from './App'
 import './style.css'
 
@@ -14,7 +15,9 @@ try {
   ReactDOM.createRoot(rootElement).render(
     <React.StrictMode>
       <BrowserRouter>
-        <App />
+        <ChatProvider>
+          <App />
+        </ChatProvider>
       </BrowserRouter>
     </React.StrictMode>
   )
