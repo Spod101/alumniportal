@@ -1,15 +1,7 @@
 import React, { useState } from 'react'
-import { NavLink } from 'react-router-dom'
 import { FiChevronRight } from 'react-icons/fi'
 import AnnouncementModal from '../../components/AnnouncementModal'
-
-const categories = [
-  { label: 'All Announcements', path: '/announcements' },
-  { label: 'Company News', path: '/announcements/company-news' },
-  { label: 'Policy Changes', path: '/announcements/policy-changes' },
-  { label: 'Partnerships & Advocacies', path: '/announcements/partnerships' },
-  { label: 'Alumni Success Stories', path: '/announcements/alumni-stories' },
-]
+import AnnouncementsSidebar from '../../components/announcements/AnnouncementsSidebar'
 
 const featuredAlumni = {
   image: 'https://i.pravatar.cc/400?img=10',
@@ -103,29 +95,7 @@ export default function AlumniStoriesPage() {
         {/* Main Content Area with Sidebar */}
         <div className="flex gap-6">
           {/* Left Sidebar - Navigation */}
-          <aside className="w-64 flex-shrink-0">
-            <div className="bg-white rounded-xl p-4 shadow-sm sticky top-6">
-              <h3 className="text-sm font-semibold text-gray-700 mb-4">Announcements</h3>
-              <nav className="flex flex-col gap-1">
-                {categories.map((cat) => (
-                  <NavLink
-                    key={cat.path}
-                    to={cat.path}
-                    end={cat.path === '/announcements'}
-                    className={({ isActive }) =>
-                      `px-4 py-2.5 rounded-lg text-sm transition-colors ${
-                        isActive
-                          ? 'bg-accent text-[#2c2c2c] font-medium border-l-4 border-accent'
-                          : 'text-gray-700 hover:bg-gray-100'
-                      }`
-                    }
-                  >
-                    {cat.label}
-                  </NavLink>
-                ))}
-              </nav>
-            </div>
-          </aside>
+          <AnnouncementsSidebar />
 
           {/* Main Content */}
           <div className="flex-1 min-w-0">

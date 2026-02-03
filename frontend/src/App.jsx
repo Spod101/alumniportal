@@ -6,7 +6,7 @@ import DirectoryPage from './pages/DirectoryPage'
 import TrainingPage from './pages/TrainingPage'
 import AchievementsPage from './pages/AchievementsPage'
 import EventsPage from './pages/EventsPage'
-import AnnouncementsPage from './pages/AnnouncementsPage'
+import AnnouncementsPage from './pages/announcements/AnnouncementsPage'
 import CompanyNewsPage from './pages/announcements/CompanyNewsPage'
 import PolicyChangesPage from './pages/announcements/PolicyChangesPage'
 import PartnershipsPage from './pages/announcements/PartnershipsPage'
@@ -14,8 +14,8 @@ import AlumniStoriesPage from './pages/announcements/AlumniStoriesPage'
 import MentorshipPage from './pages/MentorshipPage'
 import DocumentsPage from './pages/DocumentsPage'
 import ProfilePage from './pages/ProfilePage'
-import JobApplicationForm from './pages/JobApplicationForm'
-import CareerPage from './pages/CareerPage'
+import CareerPage from './pages/career/CareerPage'
+import JobApplicationForm from './pages/career/JobApplicationForm'
 import Jobdetails from './pages/jobdetails/Jobdetails'
 
 export default function App() {
@@ -36,8 +36,10 @@ export default function App() {
         <Route path="/mentorship" element={<MentorshipPage />} />
         <Route path="/documents" element={<DocumentsPage />} />
         <Route path="/profile" element={<ProfilePage />} />
-        <Route path="/job-application" element={<JobApplicationForm/>} />
-        <Route path="/jobdetails/Jobdetails" element={<Jobdetails />} />
+        <Route path="/job-application" element={<JobApplicationForm />} />
+        <Route path="/career/job-details" element={<Jobdetails />} />
+        {/* Backwards-compatible alias for older job details path */}
+        <Route path="/jobdetails/Jobdetails" element={<Navigate to="/career/job-details" replace />} />
         <Route path="/" element={<Navigate to="/directory" replace />} />
         <Route path="*" element={<Navigate to="/directory" replace />} />
       </Routes>

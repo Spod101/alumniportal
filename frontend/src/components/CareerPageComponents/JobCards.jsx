@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import Logo from '../../assets/hsi-logo.png'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom'
 
-export default function JobCards({ JobTitle, JobDescription, spans }) {
+export default function JobCards() {
     //job posting mockup card
     const jobPosting = [
         {
@@ -25,9 +25,9 @@ export default function JobCards({ JobTitle, JobDescription, spans }) {
         },
     ]
     //navigation to job details page
-    const navigate = useNavigate();
+    const navigate = useNavigate()
     const handleViewDetails = () => {
-        navigate('/jobdetails/Jobdetails');
+        navigate('/career/job-details')
     };
 
     // color function for spans

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import { NavLink } from 'react-router-dom'
 import { FiCamera, FiVideo, FiCalendar, FiHeart, FiMessageCircle, FiChevronRight, FiSearch } from 'react-icons/fi'
-import AnnouncementModal from '../components/AnnouncementModal'
+import AnnouncementModal from '../../components/AnnouncementModal'
+import AnnouncementsSidebar from '../../components/announcements/AnnouncementsSidebar'
 
 // Mock data
 const mockAnnouncements = [
@@ -12,7 +12,8 @@ const mockAnnouncements = [
     timestamp: 'Jan 23, 2026 - 2:00pm',
     title: 'Expansion into Southeast Asia',
     subtitle: 'Jan 23, 2026 | Company News',
-    content: 'We are excited to announce our expansion into Southeast Asia, with new offices opening in Singapore, Malaysia, and Thailand. This strategic move will help us better serve our growing customer base in the region.',
+    content:
+      'We are excited to announce our expansion into Southeast Asia, with new offices opening in Singapore, Malaysia, and Thailand. This strategic move will help us better serve our growing customer base in the region.',
     category: 'Company News',
     likes: 42,
     comments: 8,
@@ -25,7 +26,8 @@ const mockAnnouncements = [
     timestamp: 'Jan 23, 2026 - 1:30pm',
     title: 'Updated Workplace Health & Safety Policy',
     subtitle: 'Jan 23, 2026 | Policy Changes',
-    content: 'Our workplace health and safety policy has been updated to ensure a safer and more compliant environment for our team. Please review the updated guidelines in the employee portal.',
+    content:
+      'Our workplace health and safety policy has been updated to ensure a safer and more compliant environment for our team. Please review the updated guidelines in the employee portal.',
     category: 'Policy Changes',
     likes: 28,
     comments: 5,
@@ -39,7 +41,8 @@ const mockAnnouncements = [
     timestamp: 'Jan 23, 2026 - 12:00pm',
     title: 'Tech AI Partnership',
     subtitle: 'Jan 23, 2026 | Partnerships & Advocacies',
-    content: 'We are proud to announce our new partnership with Tech AI to promote sustainable technology and innovation. Together, we will work towards a greener future.',
+    content:
+      'We are proud to announce our new partnership with Tech AI to promote sustainable technology and innovation. Together, we will work towards a greener future.',
     category: 'Partnerships & Advocacies',
     likes: 35,
     comments: 12,
@@ -56,14 +59,6 @@ const alumniSpotlight = {
   image: 'https://i.pravatar.cc/300?img=10',
   quote: 'This company provided me with the skills and network I needed to launch my own startup',
 }
-
-const categories = [
-  { label: 'All Announcements', path: '/announcements' },
-  { label: 'Company News', path: '/announcements/company-news' },
-  { label: 'Policy Changes', path: '/announcements/policy-changes' },
-  { label: 'Partnerships & Advocacies', path: '/announcements/partnerships' },
-  { label: 'Alumni Success Stories', path: '/announcements/alumni-stories' },
-]
 
 export default function AnnouncementsPage() {
   const [selectedAnnouncement, setSelectedAnnouncement] = useState(null)
@@ -106,29 +101,7 @@ export default function AnnouncementsPage() {
         {/* Main Content Area with Sidebars */}
         <div className="flex gap-6">
           {/* Left Sidebar - Navigation */}
-          <aside className="w-64 flex-shrink-0">
-            <div className="bg-white rounded-xl p-4 shadow-sm sticky top-6">
-              <h3 className="text-sm font-semibold text-gray-700 mb-4">Announcements</h3>
-              <nav className="flex flex-col gap-1">
-                {categories.map((category) => (
-                  <NavLink
-                    key={category.path}
-                    to={category.path}
-                    end={category.path === '/announcements'}
-                    className={({ isActive }) =>
-                      `px-4 py-2.5 rounded-lg text-sm transition-colors ${
-                        isActive
-                          ? 'bg-accent text-[#2c2c2c] font-medium border-l-4 border-accent'
-                          : 'text-gray-700 hover:bg-gray-100'
-                      }`
-                    }
-                  >
-                    {category.label}
-                  </NavLink>
-                ))}
-              </nav>
-            </div>
-          </aside>
+          <AnnouncementsSidebar />
 
           {/* Main Content - Feed */}
           <div className="flex-1 min-w-0">
@@ -180,12 +153,8 @@ export default function AnnouncementsPage() {
                         <span className="text-xs text-gray-500">{announcement.timestamp}</span>
                       </div>
                       <div className="flex items-center gap-2 mb-3">
-                        {announcement.icon === 'warning' && (
-                          <span className="text-accent text-xl">⚠</span>
-                        )}
-                        {announcement.icon === 'building' && (
-                          <span className="text-teal-600 text-xl">🏢</span>
-                        )}
+                        {announcement.icon === 'warning' && <span className="text-accent text-xl">⚠</span>}
+                        {announcement.icon === 'building' && <span className="text-teal-600 text-xl">🏢</span>}
                         <h2 className="text-xl font-bold text-gray-900">{announcement.title}</h2>
                       </div>
                       <p className="text-sm text-gray-600 mb-3">{announcement.subtitle}</p>
@@ -261,11 +230,8 @@ export default function AnnouncementsPage() {
       </div>
 
       {/* Modal */}
-      <AnnouncementModal
-        announcement={selectedAnnouncement}
-        isOpen={isModalOpen}
-        onClose={handleCloseModal}
-      />
+      <AnnouncementModal announcement={selectedAnnouncement} isOpen={isModalOpen} onClose={handleCloseModal} />
     </>
   )
 }
+
