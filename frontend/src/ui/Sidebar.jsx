@@ -41,7 +41,8 @@ function SidebarSection({ title, items, collapsed, isAnchor }) {
                   className={[
                     "w-full flex items-center gap-3 py-2.5 px-3 rounded-xl text-sidebar-text border border-transparent transition-all duration-150 hover:bg-white/8",
                     collapsed ? "justify-center p-2.5" : "",
-                    expandedItems[item.path] || isChildActive(item)
+                    // Only highlight as active when a child route is active, not when just expanded
+                    isChildActive(item)
                       ? "bg-accent text-[#2c2c2c] border-black/8 [&>span:first-child]:text-[#2c2c2c]"
                       : "",
                   ]
