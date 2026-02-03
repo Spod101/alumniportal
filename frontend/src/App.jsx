@@ -7,7 +7,6 @@ import ViewProfile from './pages/directory/ViewProfile'
 import TrainingPage from './pages/training/TrainingPage'
 import CertificationsPage from './pages/training/CertificationsPage'
 import AchievementsPage from './pages/achievements/AchievementsPage'
-import EventsPage from './pages/EventsPage'
 import AnnouncementsPage from './pages/announcements/AnnouncementsPage'
 import CompanyNewsPage from './pages/announcements/CompanyNewsPage'
 import PolicyChangesPage from './pages/announcements/PolicyChangesPage'
@@ -31,7 +30,6 @@ export default function App() {
         <Route path="/training" element={<TrainingPage />} />
         <Route path="/training/certifications" element={<CertificationsPage />} />
         <Route path="/achievements" element={<AchievementsPage />} />
-        <Route path="/events" element={<EventsPage />} />
         <Route path="/announcements" element={<AnnouncementsPage />} />
         <Route path="/announcements/company-news" element={<CompanyNewsPage />} />
         <Route path="/announcements/policy-changes" element={<PolicyChangesPage />} />
