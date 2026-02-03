@@ -4,7 +4,8 @@ import MainLayout from './layouts/MainLayout'
 import DashboardPage from './pages/DashboardPage'
 import DirectoryPage from './pages/directory/DirectoryPage'
 import ViewProfile from './pages/directory/ViewProfile'
-import TrainingPage from './pages/TrainingPage'
+import TrainingPage from './pages/training/TrainingPage'
+import CertificationsPage from './pages/training/CertificationsPage'
 import AchievementsPage from './pages/AchievementsPage'
 import EventsPage from './pages/EventsPage'
 import AnnouncementsPage from './pages/announcements/AnnouncementsPage'
@@ -28,6 +29,7 @@ export default function App() {
         <Route path="/directory/view-profile" element={<ViewProfile />} />
         <Route path="/career" element={<CareerPage />} />
         <Route path="/training" element={<TrainingPage />} />
+        <Route path="/training/certifications" element={<CertificationsPage />} />
         <Route path="/achievements" element={<AchievementsPage />} />
         <Route path="/events" element={<EventsPage />} />
         <Route path="/announcements" element={<AnnouncementsPage />} />
