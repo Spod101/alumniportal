@@ -12,7 +12,12 @@ import CompanyNewsPage from './pages/announcements/CompanyNewsPage'
 import PolicyChangesPage from './pages/announcements/PolicyChangesPage'
 import PartnershipsPage from './pages/announcements/PartnershipsPage'
 import AlumniStoriesPage from './pages/announcements/AlumniStoriesPage'
-import MentorshipPage from './pages/MentorshipPage'
+import MentorshipLanding from './pages/mentorship/LandingPage'
+import MentorList from './pages/mentorship/MentorList'
+import RequestMentorship from './pages/mentorship/RequestMentorship'
+import BecomeMentor from './pages/mentorship/BecomeMentor'
+import MentorSignUp from './pages/mentorship/MentorSignUp'
+import VolunteerPrograms from './pages/mentorship/VolunteerPrograms'
 import DocumentsPage from './pages/DocumentsPage'
 import ProfilePage from './pages/ProfilePage'
 import CareerPage from './pages/career/CareerPage'
@@ -35,7 +40,12 @@ export default function App() {
         <Route path="/announcements/policy-changes" element={<PolicyChangesPage />} />
         <Route path="/announcements/partnerships" element={<PartnershipsPage />} />
         <Route path="/announcements/alumni-stories" element={<AlumniStoriesPage />} />
-        <Route path="/mentorship" element={<MentorshipPage />} />
+        <Route path="/mentorship" element={<MentorshipLanding />} />
+        <Route path="/mentorship/mentors" element={<MentorList />} />
+        <Route path="/mentorship/request" element={<RequestMentorship />} />
+        <Route path="/mentorship/become-mentor" element={<BecomeMentor />} />
+        <Route path="/mentorship/signup" element={<MentorSignUp />} />
+        <Route path="/mentorship/volunteer" element={<VolunteerPrograms />} />
         <Route path="/documents" element={<DocumentsPage />} />
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/job-application" element={<JobApplicationForm />} />

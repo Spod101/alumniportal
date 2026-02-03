@@ -3,7 +3,6 @@ import {
   FiAward,
   FiBell,
   FiBookOpen,
-  FiCalendar,
   FiFileText,
   FiHome,
   FiLayers,
@@ -27,7 +26,6 @@ export const NAV_ITEMS = [
      ]
     },
   { label: 'Achievements & Recognition', path: '/achievements', icon: <FiAward />, section: 'main' },
-  { label: 'Events & Community Engagement', path: '/events', icon: <FiCalendar />, section: 'main' },
   { label: 'Announcements', path: '/announcements', icon: <FiBell />, section: 'main' },
   { label: 'Mentorship & Volunteer Programs', path: '/mentorship', icon: <FiLayers />, section: 'main' },
   { label: 'Documents & Records', path: '/documents', icon: <FiFileText />, section: 'main' },
