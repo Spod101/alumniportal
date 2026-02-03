@@ -18,7 +18,10 @@ import RequestMentorship from './pages/mentorship/RequestMentorship'
 import BecomeMentor from './pages/mentorship/BecomeMentor'
 import MentorSignUp from './pages/mentorship/MentorSignUp'
 import VolunteerPrograms from './pages/mentorship/VolunteerPrograms'
-import DocumentsPage from './pages/DocumentsPage'
+import DocumentsPage from './pages/documents/DocumentsPage'
+import DocumentsListPage from './pages/documents/DocumentsListPage'
+import DocumentPreviewPage from './pages/documents/DocumentPreviewPage'
+import DocumentRequestPage from './pages/documents/DocumentRequestPage'
 import ProfilePage from './pages/ProfilePage'
 import CareerPage from './pages/career/CareerPage'
 import JobApplicationForm from './pages/career/JobApplicationForm'
@@ -47,6 +50,9 @@ export default function App() {
         <Route path="/mentorship/signup" element={<MentorSignUp />} />
         <Route path="/mentorship/volunteer" element={<VolunteerPrograms />} />
         <Route path="/documents" element={<DocumentsPage />} />
+        <Route path="/documents/list" element={<DocumentsListPage />} />
+        <Route path="/documents/preview" element={<DocumentPreviewPage />} />
+        <Route path="/documents/request" element={<DocumentRequestPage />} />
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/job-application" element={<JobApplicationForm />} />
         <Route path="/career/job-details" element={<Jobdetails />} />
