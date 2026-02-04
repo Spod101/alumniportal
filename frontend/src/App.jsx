@@ -60,8 +60,8 @@ export default function App() {
         <Route path="/career/job-details" element={<Jobdetails />} />
         {/* Backwards-compatible alias for older job details path */}
         <Route path="/jobdetails/Jobdetails" element={<Navigate to="/career/job-details" replace />} />
-        <Route path="/" element={<Navigate to="/directory" replace />} />
-        <Route path="*" element={<Navigate to="/directory" replace />} />
+        <Route path="/" element={<Navigate to="/dashboard" replace />} />
+        <Route path="*" element={<Navigate to="/dashboard" replace />} />
       </Routes>
     </MainLayout>
   )
