@@ -3,7 +3,7 @@ import { FiSearch, FiChevronLeft, FiChevronRight } from 'react-icons/fi'
 import DirectoryHeader from '../../components/directory/DirectoryHeader'
 import EmployeeCard from '../../components/directory/EmployeeCards'
 import SelectionBox from '../../components/directory/SelectionBox'
-import { useChat } from '../../context/ChatContext'
+import { useChat } from '../../components/chat/ChatContext'
 import { DIRECTORY_EMPLOYEES } from '../../utils/directoryData'
 import '../../components/directory/directory.css'
 

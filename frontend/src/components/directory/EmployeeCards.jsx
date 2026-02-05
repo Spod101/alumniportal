@@ -1,6 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-import { useChat } from '../../context/ChatContext'
+import { useChat } from '../../components/chat/ChatContext'
 
 function getStatusBadgeStyles(status) {
   switch (status?.toLowerCase()) {

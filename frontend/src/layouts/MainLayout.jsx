@@ -1,6 +1,6 @@
 import React from 'react'
 import Sidebar from '../ui/Sidebar'
-import ChatBox from '../components/ChatBox'
+import ChatBox from '../components/chat/ChatBox'
 
 export default function MainLayout({ children }) {
   return (

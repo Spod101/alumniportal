@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FiX, FiSend, FiMinus, FiPhone, FiVideo, FiMoreHorizontal, FiEdit3 } from 'react-icons/fi';
-import { useChat } from '../context/ChatContext';
+import { useChat } from './ChatContext';
 
 export default function ChatBox() {
   const { activeChat, chatHistory, isChatOpen, closeChat, sendMessage, switchChat, openChat, allUsers } = useChat();
