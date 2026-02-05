@@ -101,9 +101,9 @@ function JobDescription({ description }) {
     <JobBox>
       <h4 style={{ marginTop: 0, marginBottom: 12, fontSize: 18, fontWeight: 600 }}>Job Description</h4>
       <p>{description.JobDescription}</p>
-      <h4 style={{marginTop: 12, fontSize: 20, marginBottom: 12, fontSize: 18, fontWeight: 600}}>Requirements:</h4>
+      <h4 style={{ marginTop: 12, marginBottom: 12, fontSize: 18, fontWeight: 600 }}>Requirements:</h4>
       <p style={{whiteSpace: 'pre-line' }}>{description.Requirements}</p>
-      <h4 style={{marginTop: 12, marginBottom: 12, fontSize: 20, fontSize: 18, fontWeight: 600}}>Responsibilities:</h4>
+      <h4 style={{ marginTop: 12, marginBottom: 12, fontSize: 18, fontWeight: 600 }}>Responsibilities:</h4>
       <p style={{ whiteSpace: 'pre-line' }}>{description.Responsibilities}</p>
     
     <div style={{ display: 'flex', justifyContent: 'right', marginTop: 20 }}>
