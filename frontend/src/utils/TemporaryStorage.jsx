@@ -1,56 +1,67 @@
-// utils/TemporaryStorage.jsx
-
-let programEvaluationDraft = {}
-let profileData = null
-
-// Simple in-memory store (TEMPORARY ONLY)
-const TemporaryStorage = {
+let store = {
+  profile: null,
   reviews: [],
+  programEvaluationDraft: {},
+};
 
-  // PROFILE (current user – used by Profile page)
+const TemporaryStorage = {
+  // Profile (used by ProfilePage)
   getProfile() {
-    return profileData
+    return store.profile;
   },
 
   saveProfile(data) {
-    profileData = data ? { ...data } : null
+    store.profile = data ? { ...data } : null;
   },
 
   clearProfile() {
-    profileData = null
+    store.profile = null;
   },
 
+  // Reviews (used by AlumniFeedback, ProgramEvaluation, Suggestions, RecentReviews)
   addReview(review) {
-    this.reviews.push({
+    store.reviews.push({
       id: Date.now(),
       ...review,
-    })
+    });
   },
 
   getReviews() {
-    return this.reviews
+    return store.reviews;
+  },
+
+  clearReviews() {
+    store.reviews = [];
   },
 
   clear() {
-    this.reviews = []
+    store.reviews = [];
   },
 
-  // PROGRAM EVALUATION 
-
+  // Program evaluation draft (used by ProgramEvaluation flow)
   saveProgramEvaluationDraft(sectionData) {
-    programEvaluationDraft = {
-      ...programEvaluationDraft,
-      ...sectionData
-    }
+    store.programEvaluationDraft = {
+      ...store.programEvaluationDraft,
+      ...sectionData,
+    };
   },
 
   getProgramEvaluationDraft() {
-    return programEvaluationDraft
+    return store.programEvaluationDraft;
   },
 
   clearProgramEvaluationDraft() {
-    programEvaluationDraft = {}
-  }
-}
+    store.programEvaluationDraft = {};
+  },
 
-export default TemporaryStorage
+  // Clear all storage
+  clearAll() {
+    store = {
+      profile: null,
+      reviews: [],
+      programEvaluationDraft: {},
+    };
+  },
+};
+
+export default TemporaryStorage;

@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import TemporaryStorage from '../utils/TemporaryStorage'
 import {
   FiAward,
   FiBell,
@@ -59,7 +60,24 @@ const SIDEBAR_LINKS = [
 const CARD_CLASS =
   'rounded-xl bg-white border border-[#e6e6e6] shadow-[0_2px_12px_rgba(17,24,39,0.04)]'
 
+const DEFAULT_PROFILE = {
+  name: 'Bill Gates',
+  position: 'Senior Frontend Developer',
+  photo: 'https://tse4.mm.bing.net/th/id/OIP.l96pfbLLzrd2hc-WZhDdtAHaE8?rs=1&pid=ImgDetMain&o=7&rm=3',
+}
+
+function getProfile() {
+  const stored = TemporaryStorage.getProfile()
+  if (!stored) return DEFAULT_PROFILE
+  return {
+    name: stored.name ?? DEFAULT_PROFILE.name,
+    position: stored.position ?? DEFAULT_PROFILE.position,
+    photo: stored.photo ?? DEFAULT_PROFILE.photo,
+  }
+}
+
 export default function DashboardPage() {
+  const profile = getProfile()
   return (
     <div className="flex gap-8 max-w-[1400px]">
       {/* Main content */}
@@ -204,11 +222,15 @@ export default function DashboardPage() {
       <aside className="hidden xl:block w-[280px] flex-shrink-0 space-y-5">
         {/* You / Profile — avatar with accent ring */}
         <div className={`${CARD_CLASS} p-5`}>
-          <div className="w-12 h-12 rounded-full bg-[#f5f0e4] border-2 border-accent/40 flex items-center justify-center mb-3">
-            <FiUser className="w-6 h-6 text-[#6b5d4f]" />
+          <div className="w-12 h-12 rounded-full bg-[#f5f0e4] border-2 border-accent/40 flex items-center justify-center overflow-hidden mb-3">
+            {profile?.photo ? (
+              <img src={profile.photo} alt={profile.name} className="w-full h-full object-cover" />
+            ) : (
+              <FiUser className="w-6 h-6 text-[#6b5d4f]" />
+            )}
           </div>
-          <p className="m-0 text-sm font-semibold text-[#1f1f1f]">You</p>
-          <p className="m-0 mt-0.5 text-xs text-[#666]">Alumni member</p>
+          <p className="m-0 text-sm font-semibold text-[#1f1f1f]">{profile?.name ?? 'You'}</p>
+          <p className="m-0 mt-0.5 text-xs text-[#666]">{profile?.position ?? 'Alumni member'}</p>
           <Link
             to="/profile"
             className="mt-3 inline-flex items-center gap-1.5 text-xs font-medium text-accent hover:text-accent-dark transition-colors"
