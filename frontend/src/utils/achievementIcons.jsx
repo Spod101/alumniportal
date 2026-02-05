@@ -1,4 +1,4 @@
-// Maps iconKey from achievementData to react-icons (Fi) for Achievements & Recognition
+// Maps iconKey from dummyData to react-icons (Fi) for Achievements & Recognition
 import {
   FiAward,
   FiTrendingUp,

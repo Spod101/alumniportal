@@ -1,6 +1,6 @@
 import React, { useMemo, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { DOCUMENTS_SEED, RECENT_DOCUMENTS_SEED, DOCUMENT_REQUESTS } from "../../utils/documentsData";
+import { DOCUMENTS_SEED, RECENT_DOCUMENTS_SEED, DOCUMENT_REQUESTS } from "../../utils/dummyData";
 
 function StatCard({ icon, title, value }) {
   return (

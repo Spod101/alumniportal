@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ACHIEVEMENT_STATS, ACHIEVEMENT_TABS } from '../../utils/achievementData';
+import { ACHIEVEMENT_STATS, ACHIEVEMENT_TABS } from '../../utils/dummyData';
 import { ACHIEVEMENT_ICONS } from '../../utils/achievementIcons';
 import FeaturedAlumni from '../../components/achievements/FeaturedAlumni';
 import BadgeShowcase from '../../components/achievements/BadgeShowcase';

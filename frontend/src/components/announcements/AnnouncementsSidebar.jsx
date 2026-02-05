@@ -1,6 +1,6 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import { ANNOUNCEMENT_CATEGORIES } from '../../utils/announcementCategories'
+import { ANNOUNCEMENT_CATEGORIES } from '../../utils/dummyData'
 
 export default function AnnouncementsSidebar() {
   return (

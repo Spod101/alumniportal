@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FiArrowLeft } from 'react-icons/fi';
-import { defaultProfileMockData } from '../utils/profileData';
+import { defaultProfileMockData } from '../utils/dummyData';
 import TemporaryStorage from '../utils/TemporaryStorage';
 import ProfileHeaderCard from '../components/profile/ProfileHeaderCard';
 import AboutMeCard from '../components/profile/AboutMeCard';

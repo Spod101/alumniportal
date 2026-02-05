@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { RECENT_ACHIEVEMENTS, ACHIEVEMENT_TYPE_CONFIG } from '../../utils/achievementData';
+import { RECENT_ACHIEVEMENTS, ACHIEVEMENT_TYPE_CONFIG } from '../../utils/dummyData';
 import { ACHIEVEMENT_ICONS } from '../../utils/achievementIcons';
 
 const Clock = ACHIEVEMENT_ICONS.clock;

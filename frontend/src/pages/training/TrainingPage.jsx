@@ -4,7 +4,7 @@ import SortFilterDropdown from '../../components/training/SortFilterDropdown'
 import CourseCard from '../../components/training/CourseCard'
 import RecCourses from '../../components/training/RecCourses'
 import LearningPaths from '../../components/training/LearningPaths'
-import { TRAINING_COURSES, TRAINING_PLATFORMS, TRAINING_ITEMS_PER_PAGE } from '../../utils/trainingData'
+import { TRAINING_COURSES, TRAINING_PLATFORMS, TRAINING_ITEMS_PER_PAGE } from '../../utils/dummyData'
 
 function getPageNumbers(currentPage, totalPages) {
   if (totalPages <= 7) return Array.from({ length: totalPages }, (_, i) => i + 1)

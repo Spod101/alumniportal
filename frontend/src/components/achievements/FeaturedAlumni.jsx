@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FEATURED_ALUMNI, BADGE_COLORS } from '../../utils/achievementData';
+import { FEATURED_ALUMNI, BADGE_COLORS } from '../../utils/dummyData';
 import { ACHIEVEMENT_ICONS } from '../../utils/achievementIcons';
 
 const Crown = ACHIEVEMENT_ICONS.crown;

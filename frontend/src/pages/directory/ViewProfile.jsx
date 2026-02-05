@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { FiArrowLeft } from 'react-icons/fi';
 import { useChat } from '../../components/chat/ChatContext';
-import { defaultProfileMockData } from '../../utils/profileData';
+import { defaultProfileMockData } from '../../utils/dummyData';
 import ProfileHeaderCard from '../../components/profile/ProfileHeaderCard';
 import AboutMeCard from '../../components/profile/AboutMeCard';
 import ProjectTableCard from '../../components/profile/ProjectTableCard';

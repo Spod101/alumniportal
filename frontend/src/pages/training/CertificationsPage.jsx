@@ -4,7 +4,7 @@ import ContinueCertificationCard from '../../components/training/ContinueCertifi
 import CertificateCard from '../../components/training/CertificateCard'
 import ViewHistoryCertification from '../../components/training/ViewHistoryCertification'
 import UploadCertificateModal from '../../components/training/UploadCertificateModal'
-import { CONTINUE_CERTIFICATIONS, MY_CERTIFICATES } from '../../components/training/CertificationDummyData'
+import { CONTINUE_CERTIFICATIONS, MY_CERTIFICATES } from '../../utils/dummyData'
 
 export default function CertificationsPage() {
   const [certificateTab, setCertificateTab] = useState('all')

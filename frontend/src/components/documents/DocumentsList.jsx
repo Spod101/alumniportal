@@ -1,6 +1,6 @@
 import React, { useMemo, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { DOCUMENTS_MASTERLIST } from "../../utils/documentsData";
+import { DOCUMENTS_MASTERLIST } from "../../utils/dummyData";
 
 function Stat({ icon, label, value }) {
   return (

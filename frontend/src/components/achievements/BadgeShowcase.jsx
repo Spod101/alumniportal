@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { createPortal } from 'react-dom';
-import { BADGE_CONFIG, TIER_CONFIG, BADGE_HOLDERS, BADGE_HOLDERS_PAGE_SIZE } from '../../utils/achievementData';
+import { BADGE_CONFIG, TIER_CONFIG, BADGE_HOLDERS, BADGE_HOLDERS_PAGE_SIZE } from '../../utils/dummyData';
 import { ACHIEVEMENT_ICONS } from '../../utils/achievementIcons';
 
 const Medal = ACHIEVEMENT_ICONS.medal;

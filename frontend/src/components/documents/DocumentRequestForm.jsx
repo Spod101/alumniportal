@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FiSearch, FiUser, FiUpload, FiX } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
-import { DOCUMENT_TYPES, DEPARTMENTS, PRIMARY_REQUESTS, DELIVERY_OPTIONS } from "../../utils/documentsData";
+import { DOCUMENT_TYPES, DEPARTMENTS, PRIMARY_REQUESTS, DELIVERY_OPTIONS } from "../../utils/dummyData";
 
 export default function DocumentRequestForm() {
   const navigate = useNavigate();

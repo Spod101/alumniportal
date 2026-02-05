@@ -1,6 +1,6 @@
 import React from 'react'
 import { FiX } from 'react-icons/fi'
-import { CONTINUE_CERTIFICATIONS } from './CertificationDummyData'
+import { CONTINUE_CERTIFICATIONS } from '../../utils/dummyData'
 
 export default function ViewHistoryCertification({ isOpen, onClose }) {
   if (!isOpen) return null

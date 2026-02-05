@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { createPortal } from 'react-dom';
-import { RECOGNITION_TYPES, APPRECIATION_POSTS_INITIAL, APPRECIATION_FORM_INITIAL } from '../../utils/achievementData';
+import { RECOGNITION_TYPES, APPRECIATION_POSTS_INITIAL, APPRECIATION_FORM_INITIAL } from '../../utils/dummyData';
 import { ACHIEVEMENT_ICONS } from '../../utils/achievementIcons';
 
 const Heart = ACHIEVEMENT_ICONS.heart;
