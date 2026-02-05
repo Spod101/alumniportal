@@ -27,6 +27,13 @@ import ProfilePage from './pages/ProfilePage'
 import CareerPage from './pages/career/CareerPage'
 import JobApplicationForm from './pages/career/JobApplicationForm'
 import Jobdetails from './pages/jobdetails/Jobdetails'
+import FeedbackPage from './pages/feedback/FeedbackPage'
+import AlumniFeedbackPage from './pages/feedback/AlumniFeedbackPage'
+import ProgramEvaluationPage from './pages/feedback/ProgramEvaluationPage'
+import ProgramEvaluationSection2 from './pages/feedback/ProgramEvaluationSection2'
+import ProgramEvaluationSection3 from './pages/feedback/ProgramEvaluationSection3'
+import SuggestionsImprovementPage from './pages/feedback/SuggestionsImprovementPage'
+import RecentReviewsPage from './pages/feedback/RecentReviewsPage'
 
 export default function App() {
   return (
@@ -55,6 +62,13 @@ export default function App() {
         <Route path="/documents/list" element={<DocumentsListPage />} />
         <Route path="/documents/preview" element={<DocumentPreviewPage />} />
         <Route path="/documents/request" element={<DocumentRequestPage />} />
+        <Route path="/feedback" element={<FeedbackPage />} />
+        <Route path="/feedback/alumni" element={<AlumniFeedbackPage />} />
+        <Route path="/feedback/program-evaluation" element={<ProgramEvaluationPage />} />
+        <Route path="/feedback/program-evaluation/section-2" element={<ProgramEvaluationSection2 />} />
+        <Route path="/feedback/program-evaluation/section-3" element={<ProgramEvaluationSection3 />} />
+        <Route path="/feedback/suggestions" element={<SuggestionsImprovementPage />} />
+        <Route path="/feedback/reviews" element={<RecentReviewsPage />} />
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/job-application" element={<JobApplicationForm />} />
         <Route path="/career/job-details" element={<Jobdetails />} />

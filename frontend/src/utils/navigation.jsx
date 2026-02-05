@@ -7,6 +7,7 @@ import {
   FiFileText,
   FiHome,
   FiLayers,
+  FiMessageSquare,
   FiTarget,
   FiUser,
   FiUsers,
@@ -17,21 +18,22 @@ export const NAV_ITEMS = [
   { label: 'Directory & Networking', path: '/directory', icon: <FiUsers />, section: 'main' },
   { label: 'Career & Job Opportunities', path: '/career', icon: <FiTarget />, section: 'main' },
   {
-     label: 'Training & Learning', 
-     path: '/training', 
-     icon: <FiBookOpen />, 
-     section: 'main',
-     children: [
-       { label: 'Training & Learning Paths', path: '/training' },
-       { label: 'Certifications', path: '/training/certifications' },
-     ]
-    },
+    label: 'Training & Learning',
+    path: '/training',
+    icon: <FiBookOpen />,
+    section: 'main',
+    children: [
+      { label: 'Training & Learning Paths', path: '/training' },
+      { label: 'Certifications', path: '/training/certifications' },
+    ]
+  },
   { label: 'Achievements & Recognition', path: '/achievements', icon: <FiAward />, section: 'main' },
   { label: 'Events & Community Engagement', path: '/events', icon: <FiCalendar />, section: 'main' },
   { label: 'Announcements', path: '/announcements', icon: <FiBell />, section: 'main' },
   { label: 'Mentorship & Volunteer Programs', path: '/mentorship', icon: <FiLayers />, section: 'main' },
   { label: 'Documents & Records', path: '/documents', icon: <FiFileText />, section: 'main' },
   { label: 'Profile', path: '/profile', icon: <FiUser />, section: 'others' },
+  { label: 'Feedback & Surveys', path: '/feedback', icon: <FiMessageSquare />, section: 'others' },
 ]
 
 export const groupNavItems = (items) =>
