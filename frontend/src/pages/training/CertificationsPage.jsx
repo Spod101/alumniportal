@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from 'react'
 import { FiSearch, FiChevronLeft, FiChevronRight, FiChevronDown, FiStar, FiUpload } from 'react-icons/fi'
+import CertificationsPageHeader from '../../components/training/CertificationsPageHeader'
 import ContinueCertificationCard from '../../components/training/ContinueCertificationCard'
 import CertificateCard from '../../components/training/CertificateCard'
 import ViewHistoryCertification from '../../components/training/ViewHistoryCertification'
@@ -43,6 +44,7 @@ export default function CertificationsPage() {
 
   return (
     <div className="space-y-6 p-6">
+      <CertificationsPageHeader />
       <ViewHistoryCertification isOpen={isHistoryOpen} onClose={() => setIsHistoryOpen(false)} />
       <UploadCertificateModal isOpen={isUploadOpen} onClose={() => setIsUploadOpen(false)} />
 

@@ -1,4 +1,5 @@
 import React, { useRef, useState, useMemo } from 'react'
+import TrainingPageHeader from '../../components/training/TrainingPageHeader'
 import FiltersPanel from '../../components/training/FiltersPanel'
 import SortFilterDropdown from '../../components/training/SortFilterDropdown'
 import CourseCard from '../../components/training/CourseCard'
@@ -204,7 +205,8 @@ export default function TrainingPage() {
 
   return (
     <div className="p-6">
-      <section className="relative left-1/2 -translate-x-1/2 w-screen bg-[#EEE6C8]">
+      <TrainingPageHeader />
+      <section className="relative left-1/2 -translate-x-1/2 w-screen bg-[#EEE6C8] mt-6">
         <div className="max-w-6xl mx-auto px-6 py-10">
           <h2 className="text-lg font-semibold mb-6">Learning Platforms</h2>
           <div className="relative">

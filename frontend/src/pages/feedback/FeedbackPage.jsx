@@ -6,6 +6,7 @@ import {
   FiClipboard,
   FiMessageSquare,
 } from 'react-icons/fi'
+import PageHeader from '../../components/PageHeader'
 
 export default function FeedbackPage() {
   const [rating, setRating] = useState(null)
@@ -13,14 +14,12 @@ export default function FeedbackPage() {
 
   return (
     <div className="px-10 py-8 bg-[#F5F5F5] min-h-screen">
-      <div className="text-center mb-10">
-        <h1 className="text-3xl font-semibold mb-2">
-          Feedback & Surveys
-        </h1>
-        <p className="text-base text-gray-600">
-          Share your feedback and help us improve.
-        </p>
-      </div>
+      <PageHeader
+        titlePart1="Feedback & "
+        titlePart2="Surveys"
+        subtitle="Share your feedback and help us improve."
+      />
+      <div className="mb-10" />
 
       <div className="flex flex-col items-center gap-6 mb-14">
         <Card

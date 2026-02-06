@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ACHIEVEMENT_STATS, ACHIEVEMENT_TABS } from '../../utils/dummyData';
 import { ACHIEVEMENT_ICONS } from '../../utils/achievementIcons';
+import PageHeader from '../../components/PageHeader';
 import FeaturedAlumni from '../../components/achievements/FeaturedAlumni';
 import BadgeShowcase from '../../components/achievements/BadgeShowcase';
 import CompanyAppreciationPosts from '../../components/achievements/CompanyAppreciationPosts';
@@ -56,7 +57,12 @@ function AchievementsPage() {
   return (
     <div className="min-h-screen bg-[#EFEFEF] px-5 sm:px-8 lg:px-12 py-8">
       <div className="mx-auto w-full max-w-7xl">
-        <div className="mb-6 bg-white rounded-xl shadow-sm overflow-hidden">
+        <PageHeader
+          titlePart1="Achievements & "
+          titlePart2="Recognition"
+          subtitle="Celebrate your milestones, badges, and featured alumni spotlights."
+        />
+        <div className="mb-6 mt-6 bg-white rounded-xl shadow-sm overflow-hidden">
           <div className="flex">
             {ACHIEVEMENT_TABS.map((tab) => {
               const Icon = ACHIEVEMENT_ICONS[tab.iconKey];

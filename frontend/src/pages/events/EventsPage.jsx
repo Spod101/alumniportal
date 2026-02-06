@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import PageHeader from "../../components/PageHeader";
 import { Calendar } from "../../components/events/Calendar";
 import { FiMapPin, FiCalendar as FiCalendarIcon } from "react-icons/fi";
 
@@ -147,15 +148,12 @@ export default function EventsPage() {
     >
       {/* Main Events Page */}
       <section className="w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
-        <h1 className="text-2xl sm:text-3xl font-bold mb-3">
-          Events and{" "}
-          <span style={{ color: "#f3b927" }}>Community Engagement</span>
-        </h1>
-        <p className="text-gray-600 mb-6 lg:mb-8 max-w-4xl italic text-sm sm:text-base">
-          Discover upcoming events, connect with fellow alumni, and stay
-          engaged with our vibrant community through our curated selection of
-          virtual and onsite gatherings.
-        </p>
+        <PageHeader
+          titlePart1="Events & "
+          titlePart2="Community Engagement"
+          subtitle="Discover upcoming events, connect with fellow alumni, and stay engaged with our vibrant community."
+        />
+        <div className="mb-6 lg:mb-8" />
 
         <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 gap-y-8 max-w-7xl mx-auto">
           {/* Left Column */}

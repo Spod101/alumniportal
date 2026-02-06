@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { FiChevronLeft, FiChevronRight, FiFlag, FiUsers, FiArrowRight } from "react-icons/fi";
 import { Link, useNavigate } from "react-router-dom";
+import PageHeader from "../../components/PageHeader";
 
 const LandingPage = () => {
   const navigate = useNavigate();
@@ -157,6 +158,15 @@ const LandingPage = () => {
 
   return (
     <div className="w-full">
+      <div className="px-4 sm:px-8 lg:px-16 pt-6 pb-2">
+        <div className="max-w-7xl mx-auto">
+          <PageHeader
+            titlePart1="Mentorship & "
+            titlePart2="Programs"
+            subtitle="Grow your career through mentorship, volunteering, and community."
+          />
+        </div>
+      </div>
       {/* 1ST SECTION - Hero Section - RESPONSIVE */}
       <div className="bg-gray-200 px-4 sm:px-8 lg:px-16 py-10 sm:py-16 lg:py-20">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-center">
