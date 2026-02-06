@@ -50,38 +50,34 @@ return (
     <>
     {(jobPosting.map((jobPosting) => (
         <div className='bg-white shadow-md rounded-xl p-4 hover:scale-105 transition-transform duration-200'>
-            {/* card content */}
-            <div className='flex justify-center'>
-                <div className='w-[40%] flex-auto'>
-                    <img src={Logo} alt="HSI Logo" className='h-[140px]'/>
+            <div className='flex flex-col xl:flex-row justify-center'>
+                <div className='w-full xl:w-[40%] flex-auto flex justify-center xl:justify-start'>
+                    <img src={Logo} alt="HSI Logo" className='h-[100px] xl:h-[140px]'/>
                 </div>
-                
-                <div className='w-[60%] flex-auto text-right'>
-                    <h2 className='font-bold text-xl'>{jobPosting.jobTitle}</h2>
+                <div className='w-full xl:w-[60%] flex-auto text-center xl:text-right pt-3 xl:pt-0'>
+                    <h2 className='font-bold text-lg xl:text-xl'>{jobPosting.jobTitle}</h2>
                     <p className='text-sm italic text-gray-700'>{jobPosting.jobDescription}</p>
-                    <div className='gap-2 flex justify-end py-2 flex-wrap pl-1'>
+                    <div className='gap-2 flex justify-center xl:justify-end py-2 flex-wrap'>
                         {Array.isArray(jobPosting.jobTags) && jobPosting.jobTags.map((item, index) => (
                             <span
                                 key={index}
-                                className={`border px-5 rounded-lg max-h-fit ${getSpanClasses(item)}`}
+                                className={`border px-3 xl:px-5 rounded-lg max-h-fit text-sm ${getSpanClasses(item)}`}
                             >
                                 {item}
                             </span>
                         ))}
                     </div>
-                    <div className='flex justify-end items-center pt-5'>
+                    <div className='flex justify-center xl:justify-end items-center pt-5 gap-2'>
                             <div>
-                                    <h1 className='font-bold'>Highly Succeed Inc.</h1>
-                                    
-                                    <h1 className='font-light italic text-gray-500 text-sm'>Mandaluyong City</h1>
+                                    <h1 className='font-bold text-sm xl:text-base'>Highly Succeed Inc.</h1>
+                                    <h1 className='font-light italic text-gray-500 text-xs xl:text-sm'>Mandaluyong City</h1>
                             </div>
-                            <img src={Logo} alt="HSI Logo" className='h-[65px]'/>
+                            <img src={Logo} alt="HSI Logo" className='h-[50px] xl:h-[65px]'/>
                     </div>
                 </div>
-                
             </div>
-            <div className='w-full flex justify-center px-10'>
-            <button onClick={handleViewDetails} className='px-2 py-1 border border-gray-300 w-full text-center bg-yellow-500 rounded-lg text-white'>View Job Details</button>
+            <div className='w-full flex justify-center px-4 xl:px-10 pt-2'>
+            <button onClick={handleViewDetails} className='px-2 py-1 border border-gray-300 w-full text-center bg-yellow-500 rounded-lg text-white text-sm xl:text-base'>View Job Details</button>
             </div>
         </div>
         )))}
