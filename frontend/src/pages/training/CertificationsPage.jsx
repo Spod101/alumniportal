@@ -43,14 +43,14 @@ export default function CertificationsPage() {
   const paginatedCertificates = filteredCertificates.slice(startIndex, startIndex + itemsPerPage)
 
   return (
-    <div className="space-y-6 p-6">
+    <div className="space-y-4 lg:space-y-6 p-4 lg:p-6">
       <CertificationsPageHeader />
       <ViewHistoryCertification isOpen={isHistoryOpen} onClose={() => setIsHistoryOpen(false)} />
       <UploadCertificateModal isOpen={isUploadOpen} onClose={() => setIsUploadOpen(false)} />
 
-      <section>
-        <div className="flex items-center justify-between mb-6">
-          <h2 className="text-2xl font-bold text-gray-800">Continue Certification</h2>
+      <section className="px-2 lg:px-0">
+        <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-3 mb-4 lg:mb-6">
+          <h2 className="text-xl lg:text-2xl font-bold text-gray-800">Continue Certification</h2>
           <button
             onClick={() => setIsHistoryOpen(true)}
             className="text-yellow-500 hover:text-yellow-600 text-sm font-semibold transition-colors"
@@ -58,19 +58,19 @@ export default function CertificationsPage() {
             View History
           </button>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 xl:grid-cols-2 2xl:grid-cols-3 gap-4 lg:gap-6">
           {CONTINUE_CERTIFICATIONS.map((cert) => (
             <ContinueCertificationCard key={cert.id} certification={cert} />
           ))}
         </div>
       </section>
 
-      <section className="mt-12">
-        <h2 className="text-2xl font-bold text-gray-800 mb-6">My Certificates</h2>
+      <section className="mt-8 lg:mt-12 px-2 lg:px-0">
+        <h2 className="text-xl lg:text-2xl font-bold text-gray-800 mb-4 lg:mb-6">My Certificates</h2>
 
-        <div className="bg-white rounded-2xl p-4 shadow-sm border border-gray-100 mb-6">
-          <div className="flex flex-col sm:flex-row gap-4">
-            <div className="relative flex-1">
+        <div className="bg-white rounded-2xl p-4 shadow-sm border border-gray-100 mb-4 lg:mb-6">
+          <div className="flex flex-col lg:flex-row gap-4">
+            <div className="relative flex-1 min-w-0">
               <FiSearch className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
               <input
                 type="text"
@@ -80,7 +80,7 @@ export default function CertificationsPage() {
                 className="w-full pl-12 pr-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent"
               />
             </div>
-            <div className="relative min-w-[140px]">
+            <div className="relative w-full lg:w-auto lg:min-w-[140px]">
               <select
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value)}
@@ -95,7 +95,7 @@ export default function CertificationsPage() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+        <div className="grid grid-cols-1 xl:grid-cols-2 gap-4 mb-4 lg:mb-6">
           <button
             onClick={() => setCertificateTab('all')}
             className={`flex items-center gap-4 p-5 rounded-xl border transition-all duration-200 ${
@@ -131,18 +131,18 @@ export default function CertificationsPage() {
           </button>
         </div>
 
-        <div className="text-sm text-gray-600 mb-6 font-medium">
+        <div className="text-xs lg:text-sm text-gray-600 mb-4 lg:mb-6 font-medium">
           Showing {filteredCertificates.length > 0 ? startIndex + 1 : 0} - {Math.min(startIndex + itemsPerPage, filteredCertificates.length)} out of {filteredCertificates.length}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+        <div className="grid grid-cols-1 xl:grid-cols-2 2xl:grid-cols-3 gap-4 lg:gap-6 mb-6 lg:mb-8">
           {paginatedCertificates.map((cert) => (
             <CertificateCard key={cert.id} certificate={cert} />
           ))}
         </div>
 
         {totalPages > 1 && (
-          <div className="flex items-center justify-center gap-2">
+          <div className="flex flex-wrap items-center justify-center gap-2">
             <button
               onClick={() => setCurrentPage(Math.max(1, currentPage - 1))}
               disabled={currentPage === 1}

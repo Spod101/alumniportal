@@ -14,14 +14,14 @@ export default function LearningPaths({ defaultOpen = null }) {
   const [open, setOpen] = useState(defaultOpen)
 
   return (
-    <section className="mt-12 max-w-5xl mx-auto">
-      <h2 className="text-xl font-semibold mb-6">Learning Paths</h2>
-      <div className="space-y-5">
+    <section className="mt-8 lg:mt-12 max-w-5xl mx-auto px-2 lg:px-0">
+      <h2 className="text-lg lg:text-xl font-semibold mb-4 lg:mb-6">Learning Paths</h2>
+      <div className="space-y-4 lg:space-y-5">
         {PATHS.map((item) => (
           <div key={item.key} className="bg-white border rounded-2xl shadow-sm overflow-hidden">
             <button
               onClick={() => setOpen(open === item.key ? null : item.key)}
-              className="w-full flex justify-between items-center px-6 py-5 font-medium text-left hover:bg-gray-50 transition"
+              className="w-full flex justify-between items-center px-4 lg:px-6 py-4 lg:py-5 font-medium text-left hover:bg-gray-50 transition text-sm lg:text-base"
             >
               <span>{item.label}</span>
               <FiChevronDown
@@ -34,7 +34,7 @@ export default function LearningPaths({ defaultOpen = null }) {
                 open === item.key ? 'max-h-[800px] opacity-100' : 'max-h-0 opacity-0'
               } overflow-hidden`}
             >
-              <div className="px-6 pb-6">
+              <div className="px-4 lg:px-6 pb-4 lg:pb-6">
                 <div className="border rounded-xl overflow-hidden bg-gray-50">
                   <img src={item.image} alt={`${item.label} roadmap`} className="w-full object-contain" />
                 </div>

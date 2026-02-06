@@ -30,7 +30,7 @@ function CourseGridSection({
 }) {
   return (
     <div className="mt-6">
-      <div className="mb-4 text-sm text-gray-600 flex justify-between items-center">
+        <div className="mb-4 text-xs lg:text-sm text-gray-600 flex flex-wrap justify-between items-center gap-2">
         <span>
           Showing {paginatedCourses.length} of {filteredCourses.length} courses
         </span>
@@ -42,14 +42,14 @@ function CourseGridSection({
       </div>
       {filteredCourses.length > 0 ? (
         <>
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 xl:grid-cols-2 2xl:grid-cols-3 gap-4 lg:gap-6">
             {paginatedCourses.map((course) => (
               <CourseCard key={course.id} course={course} />
             ))}
           </div>
-          <div className="mt-8 flex items-center justify-end gap-3">
+          <div className="mt-6 lg:mt-8 flex flex-wrap items-center justify-end gap-2 lg:gap-3">
             <button
-              className="px-5 py-2.5 bg-[#DAB619] text-white hover:bg-[#c4a015] disabled:opacity-50 disabled:cursor-not-allowed rounded-md border border-[#AAA9A9] transition-colors"
+              className="px-3 lg:px-5 py-2 lg:py-2.5 text-sm bg-[#DAB619] text-white hover:bg-[#c4a015] disabled:opacity-50 disabled:cursor-not-allowed rounded-md border border-[#AAA9A9] transition-colors"
               disabled={safePage === 1}
               onClick={() => goToPage(1)}
             >
@@ -68,13 +68,13 @@ function CourseGridSection({
               <div className="flex items-center px-1">
                 {getPageNumbers(safePage, totalPages).map((page, idx) =>
                   page === '...' ? (
-                    <span key={`ellipsis-${idx}`} className="px-4 py-2.5 text-[#7B7B7B] font-bold">
+                    <span key={`ellipsis-${idx}`} className="px-2 lg:px-4 py-2 lg:py-2.5 text-[#7B7B7B] font-bold">
                       …
                     </span>
                   ) : (
                     <button
                       key={page}
-                      className={`px-4 py-2.5 min-w-[40px] text-center transition-colors ${
+                      className={`px-2 lg:px-4 py-2 lg:py-2.5 min-w-[32px] lg:min-w-[40px] text-center text-sm transition-colors ${
                         page === safePage
                           ? 'bg-[#D7D7D7] text-[#7B7B7B] font-semibold'
                           : 'text-[#7B7B7B] hover:bg-[#F0F0F0]'
@@ -97,7 +97,7 @@ function CourseGridSection({
               </button>
             </div>
             <button
-              className="px-5 py-2.5 bg-[#DAB619] text-white hover:bg-[#c4a015] disabled:opacity-50 disabled:cursor-not-allowed rounded-md border border-[#AAA9A9] transition-colors"
+              className="px-3 lg:px-5 py-2 lg:py-2.5 text-sm bg-[#DAB619] text-white hover:bg-[#c4a015] disabled:opacity-50 disabled:cursor-not-allowed rounded-md border border-[#AAA9A9] transition-colors"
               disabled={safePage === totalPages}
               onClick={() => goToPage(totalPages)}
             >
@@ -204,11 +204,11 @@ export default function TrainingPage() {
   }
 
   return (
-    <div className="p-6">
+    <div className="p-4 lg:p-6">
       <TrainingPageHeader />
-      <section className="relative left-1/2 -translate-x-1/2 w-screen bg-[#EEE6C8] mt-6">
-        <div className="max-w-6xl mx-auto px-6 py-10">
-          <h2 className="text-lg font-semibold mb-6">Learning Platforms</h2>
+      <section className="relative left-1/2 -translate-x-1/2 w-screen bg-[#EEE6C8] mt-4 lg:mt-6">
+        <div className="max-w-6xl mx-auto px-4 lg:px-6 py-6 lg:py-10">
+          <h2 className="text-base lg:text-lg font-semibold mb-4 lg:mb-6">Learning Platforms</h2>
           <div className="relative">
             <button
               onClick={() => scrollPlatforms(-1)}
@@ -224,7 +224,7 @@ export default function TrainingPage() {
             </button>
             <div
               ref={platformScrollerRef}
-              className="flex justify-start gap-8 overflow-x-auto px-6 py-8 scroll-smooth"
+              className="flex justify-start gap-4 lg:gap-8 overflow-x-auto px-4 lg:px-6 py-6 lg:py-8 scroll-smooth"
             >
               {TRAINING_PLATFORMS.map((p) => (
                 <a
@@ -232,10 +232,10 @@ export default function TrainingPage() {
                   href={p.href}
                   target="_blank"
                   rel="noreferrer"
-                  className="shrink-0 w-[240px] h-[120px] bg-white rounded-2xl border flex items-center justify-center gap-3 shadow-md hover:scale-105 transition"
+                  className="shrink-0 w-[200px] lg:w-[240px] h-[100px] lg:h-[120px] bg-white rounded-2xl border flex items-center justify-center gap-2 lg:gap-3 shadow-md hover:scale-105 transition"
                 >
-                  <img src={p.logo} className="h-10" alt={p.name} />
-                  <span className="font-medium">{p.name}</span>
+                  <img src={p.logo} className="h-8 lg:h-10" alt={p.name} />
+                  <span className="font-medium text-sm lg:text-base">{p.name}</span>
                 </a>
               ))}
             </div>
@@ -243,11 +243,11 @@ export default function TrainingPage() {
         </div>
       </section>
 
-      <div className="mt-8 flex justify-center">
+      <div className="mt-6 lg:mt-8 flex justify-center px-2 lg:px-0">
         <div className="max-w-4xl w-full">
           <div className="bg-white rounded-2xl border p-4">
-            <div className="flex items-center gap-3">
-              <div className="relative flex-1">
+            <div className="flex flex-col lg:flex-row items-stretch lg:items-center gap-3">
+              <div className="relative flex-1 min-w-0">
                 <input
                   value={searchQuery}
                   onChange={(e) => setSearchQueryAndReset(e.target.value)}
@@ -255,13 +255,15 @@ export default function TrainingPage() {
                   className="w-full h-10 pl-4 pr-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#DAB619]/50"
                 />
               </div>
-              <SortFilterDropdown value={sortBy} onChange={setSortByAndReset} />
+              <div className="w-full lg:w-auto">
+                <SortFilterDropdown value={sortBy} onChange={setSortByAndReset} />
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="mt-1 flex flex-col items-center">
+      <div className="mt-1 flex flex-col items-center px-2 lg:px-0">
         <div className="max-w-4xl w-full">
           <FiltersPanel
             variant="inline"

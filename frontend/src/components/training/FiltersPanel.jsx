@@ -29,7 +29,7 @@ export default function FiltersPanel({
     <div
       className={
         isSidebar
-          ? 'bg-white rounded-2xl border border-neutral-200 shadow-sm p-5'
+          ? 'bg-white rounded-2xl border border-neutral-200 shadow-sm p-4 lg:p-5'
           : 'bg-white rounded-2xl border border-neutral-200 shadow-sm p-4'
       }
     >
@@ -84,8 +84,8 @@ export default function FiltersPanel({
             )}
           </div>
         ) : (
-          <div className="flex items-center justify-between gap-4">
-            <div className="flex flex-wrap items-center gap-4">
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-3 lg:gap-4">
+            <div className="flex flex-wrap items-center gap-3 lg:gap-4">
               <DepartmentDropdown value={departmentFilter} onChange={setDepartmentFilter} />
               <RoleFilterDropdown value={roleFilter} onChange={setRoleFilter} placeholder="Role" />
               <SkillFilterDropdown value={skillFilter} onChange={setSkillFilter} />
@@ -94,7 +94,7 @@ export default function FiltersPanel({
               <button
                 type="button"
                 onClick={onClear}
-                className="h-10 px-6 rounded-lg bg-[#DAB619] text-white text-sm font-semibold hover:brightness-95 transition"
+                className="h-10 px-6 rounded-lg bg-[#DAB619] text-white text-sm font-semibold hover:brightness-95 transition shrink-0"
               >
                 CLEAR
               </button>
